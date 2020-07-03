@@ -140,6 +140,7 @@ dmypy.json
 *.pptx
 *.ppt
 *.graffle
+
 # figures
 *.tiff
 *.tif
