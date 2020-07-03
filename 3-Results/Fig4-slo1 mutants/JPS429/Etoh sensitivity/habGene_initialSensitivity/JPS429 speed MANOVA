@@ -1,0 +1,20 @@
+*** Descriptive Stats ***
+gname = N2 0mM, N2 400mM, JPS429 0mM, JPS429 400mM
+n = 464, 370, 470, 451
+mean = 0.13563, 0.11385, 0.13998, 0.17734
+se = 0.0035173, 0.0036385, 0.0035173, 0.0033897
+
+
+*** Multifactorial ANOVA, speed (strain x dose)  ***
+strain: F(1,1751) = 91.951, p < 0.000
+dose: F(1,1751) = 4.842, p = 0.028
+strain*dose: F(1,1751) = 69.880, p < 0.000
+
+
+*** Posthoc tukey-kramer ***
+JPS429 0mM x JPS429 400mM, p<0.001
+JPS429 0mM x N2 0mM, p=n.s.
+JPS429 0mM x N2 400mM, p<0.001
+JPS429 400mM x N2 0mM, p<0.001
+JPS429 400mM x N2 400mM, p<0.001
+N2 0mM x N2 400mM, p<0.001

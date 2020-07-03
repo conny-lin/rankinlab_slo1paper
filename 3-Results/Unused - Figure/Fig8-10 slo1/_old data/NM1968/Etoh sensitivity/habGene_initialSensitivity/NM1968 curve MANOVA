@@ -1,0 +1,20 @@
+*** Descriptive Stats ***
+gname = N2 0mM, N2 400mM, NM1968 0mM, NM1968 400mM
+n = 1062, 1086, 1282, 1188
+mean = 31.1506, 18.4577, 32.0784, 23.4058
+se = 0.18551, 0.18718, 0.19562, 0.21809
+
+
+*** Multifactorial ANOVA, curve (strain x dose)  ***
+strain: F(1,4614) = 217.760, p < 0.000
+dose: F(1,4614) = 2878.919, p < 0.000
+strain*dose: F(1,4614) = 101.935, p < 0.000
+
+
+*** Posthoc tukey-kramer ***
+N2 0mM x N2 400mM, p<0.001
+N2 0mM x NM1968 0mM, p=0.005
+N2 0mM x NM1968 400mM, p<0.001
+N2 400mM x NM1968 0mM, p<0.001
+N2 400mM x NM1968 400mM, p<0.001
+NM1968 0mM x NM1968 400mM, p<0.001

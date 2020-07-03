@@ -128,24 +128,37 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# data files
+# spread sheets, text files
 *.csv
 *.zip
-*.tiff
-*.dat
 *.xlsx
-_DS_Store
-*.set
-*.png
-*.jpeg
-*.blobs
-*.trv
-*.summary
-*.tif
-*.fig
-*.eps
 *.txt
-*.mat
 *.docx
 *.xls
 *.pdf
+*.numbers
+*.pptx
+*.ppt
+*.graffle
+# figures
+*.tiff
+*.tif
+*.fig
+*.eps
+*.jpeg
+*.jpg
+
+# mac 
+_DS_Store
+
+# data files
+*.set
+*.png
+*.dat
+*.blobs
+*.trv
+*.summary
+*.mat
+*.plist
+*.rasterData
+
