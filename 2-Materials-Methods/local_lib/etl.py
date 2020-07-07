@@ -2,10 +2,13 @@ import os
 import pandas as pd
 import numpy as np
 
-def get_data(strain_dir, sub_dir):
+def confirm_import():
+    print('confirm')
+
+    
+def get_data(raw_data_dir):
     # get raw data ---
     # get strain data dir
-    raw_data_dir = os.path.join(strain_dir, sub_dir)
     # get raw data
     rawdata = pd.read_csv(os.path.join(raw_data_dir, 'rawdata.csv'))
     # get database
@@ -19,3 +22,4 @@ def merge_data_mwtdb(data, mwtdb, **kwargs):
     on = kwargs.pop('on','mwtid')
     merged_data = mwtdb[columns].merge(data, left_on=on, right_on=on, how='right')
     return merged_data
+
