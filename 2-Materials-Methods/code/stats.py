@@ -1,6 +1,9 @@
 # text report of stats results in manuscript written format
 import scipy.integrate as integrate
+import pandas as pd
+import numpy as np
 
+# Stats result reporting -----------------------------------------------
 def print_stats_apa(stattype, dfreedom, statvalue, pvalue, **kwargs):
     # check input
     assert isinstance(stattype, str), 'stattype must be a string'
@@ -25,14 +28,43 @@ def print_stats_apa(stattype, dfreedom, statvalue, pvalue, **kwargs):
         print(stat_report_str)
     return stat_report_str
 
+def pvalue_string(pv, pvlimit=0.001, alpha=0.05, digit=3):
+    if pv < pvlimit:
+        pv_string = f'p<{pvlimit}'
+    elif pv > alpha:
+        pv_string = 'p=n.s.'
+    else:
+        pv = round(pv, digit)
+        pv_string = f'p={pv}'
+    return pv_string
 
-def take_integral(d, **kwargs):
-    method = kwargs.pop('method','simps')
-    assert isinstance(method, str), 'method must be a string'
-    if method != 'simps':
-        assert False, 'this function currently does not support methods other than simps'
-    result = integrate.simps(d)
-    return result
+
+# Stats result reporting END ----------------------------------------------
+
+
+# Integral Class
+class Integral():
+    def __init__(self, data):
+        self.data = data
+
+    def take_integral(self, **kwargs):
+        method = kwargs.pop('method','simps')
+        assert isinstance(method, str), 'method must be a string'
+        if method != 'simps':
+            assert False, 'this function currently does not support methods other than simps'
+        result = integrate.simps(self.data)
+        return result
+    
+    def bycolumns(self, column_names):
+        output = dict()
+        for c in column_names:
+            output[c] = self.data[c].apply(integrate.simps, axis=1).astype('float64')
+        output_df = pd.DataFrame(output)
+        return output_df
+
+    
+
+
 
 
 
