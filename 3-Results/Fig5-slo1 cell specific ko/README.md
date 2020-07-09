@@ -11,6 +11,8 @@ N2 : wildtype
 ## Procedure - TWR/TAR/Initial
 1. use python to get sets of MWT paths : get_mwtpath_gfp_control.ipynb
 2. import paths using matlab and run through TWR, TAR, Initial : run_std_twr_tar_initial.m
+3. get raw data from TWR and TAR : get_Dance_rawdata2csv.m
+4. calculate TAR last 3 taps : TAR_last3taps.py
 
 
 ## Procedure - integral (depgreciated)
