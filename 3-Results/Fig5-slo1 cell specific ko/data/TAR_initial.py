@@ -20,7 +20,7 @@ print('set variables')
 # paths for data
 DATA_DIR = '/Users/connylin/Dropbox/CA/_Publications/Manuscript RL Alcohol hab model slo1/rankinlab_slo1paper/3-Results/Fig5-slo1 cell specific ko/data'
 SUB_DIR = 'Dance_rType2'
-PRJ_TAG = 'last3taps' 
+PRJ_TAG = 'initial' 
 MEASURES = ['AccProb']
 ANOVA_STRING = 'strain + dose + strain:dose'
 pvlimit = 0.001
@@ -58,7 +58,7 @@ for strain_dir in strain_dirs:
         del data2
     
     # data transformation (get last 3 taps avg per plate)
-    data_last3taps = data[data['tap'].isin([28, 29, 30])].copy()
+    data_last3taps = data[data['tap'].isin([1])].copy()
     # drop tap and n 
     data_last3taps.drop(columns=['n','tap'], inplace=True)
     data_last3taps = data_last3taps.groupby(by=['mwtpath','groupname','strain','dose']).agg('mean')
@@ -68,7 +68,7 @@ for strain_dir in strain_dirs:
 
     # output excel descriptive stats for graphing
     excel_output = data_last3taps.groupby(by='groupname').agg(['count','mean','sem'])
-    excel_filepath = os.path.join(strain_dir, 'Last3taps.xlsx')
+    excel_filepath = os.path.join(strain_dir, PRJ_TAG+'.xlsx')
     with pd.ExcelWriter(excel_filepath) as writer: 
          for msr in MEASURES: 
              excel_output[msr].to_excel(writer, sheet_name=msr)
