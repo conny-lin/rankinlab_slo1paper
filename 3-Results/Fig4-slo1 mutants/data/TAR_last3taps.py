@@ -18,7 +18,7 @@ import etl, stats, graphpack
 # set local variables --
 print('set variables')
 # paths for data
-DATA_DIR = pwd
+DATA_DIR = '/Users/connylin/Dropbox/CA/_Publications/Manuscript RL Alcohol hab model slo1/rankinlab_slo1paper/3-Results/Fig4-slo1 mutants/data'
 SUB_DIR = 'TAR/Dance_rType'
 PRJ_TAG = 'last3taps' 
 MEASURES = ['AccProb']
